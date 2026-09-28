@@ -1,0 +1,5 @@
+spring.datasource.url=jdbc:postgresql://ep-late-resonance-b5vunts7-pooler.c-7.us-east-2.aws.neon.tech/neondb?sslmode=requirespring.datasource.username=neondb_owner
+spring.datasource.password=npg_Dx0TQNnEo7YU
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
