@@ -1,10 +1,9 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import type * as Cesium from 'cesium';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/layout/Navbar';
-import CesiumMap, { type ProjectWithBuildings } from '../components/map/CesiumMap';
+import type { ProjectWithBuildings } from '../components/map/CesiumMap';
+import MapLibreMap from '../components/map/MapLibreMap';
 import PropertyDrawer from '../components/map/PropertyDrawer';
-import MapToolbar from '../components/map/MapToolbar';
 import MapLayers from '../components/map/MapLayers';
 import BuildingSelection from '../components/map/BuildingSelection';
 import projectService from '../services/projectService';
@@ -34,7 +33,6 @@ export const Map3D: React.FC = () => {
     showTerrain: false,
   });
 
-  const [viewerInstance, setViewerInstance] = useState<Cesium.Viewer | null>(null);
 
   // 1. Load real Projects and 3D Building geometries from Node API
   useEffect(() => {
@@ -237,29 +235,6 @@ export const Map3D: React.FC = () => {
     });
   };
 
-  // Reset Camera View to primary cluster
-  const handleResetView = () => {
-    const projectWithBldgs =
-      projectsWithBuildings.find((p) => p.buildings.length > 0) ||
-      projectsWithBuildings[0];
-
-    if (projectWithBldgs?.project.location) {
-      const loc = projectWithBldgs.project.location;
-      setTargetFlyLocation({
-        latitude: loc.latitude,
-        longitude: loc.longitude,
-        altitude: 450,
-      });
-    } else {
-      // Default to Delhi Center
-      setTargetFlyLocation({
-        latitude: 28.6139,
-        longitude: 77.209,
-        altitude: 850,
-      });
-    }
-  };
-
   // Fly to selected building
   const handleFocusSelected = () => {
     if (!selectedBuilding) return;
@@ -379,14 +354,6 @@ export const Map3D: React.FC = () => {
           onChangeOptions={(updated) => setLayerOptions((prev) => ({ ...prev, ...updated }))}
         />
 
-        {/* Bottom Floating Toolbar */}
-        <MapToolbar
-          viewer={viewerInstance}
-          onResetView={handleResetView}
-          onFocusSelected={handleFocusSelected}
-          hasSelection={selectedBuilding !== null}
-        />
-
         {/* Cadastral Stats Pill (Top Right) */}
         <div className="absolute top-24 right-6 z-20 hidden lg:flex items-center gap-4 px-4 py-2 bg-surface-container-lowest/90 backdrop-blur-md rounded-2xl shadow-lg border border-surface-container-high/60">
           <div className="flex items-center gap-1.5">
@@ -471,14 +438,15 @@ export const Map3D: React.FC = () => {
         )}
 
         {/* Core Cesium 3D Globe & Building Visualizer */}
-        <div className="w-full h-full flex-1">
-          <CesiumMap
+        <div className="relative w-full h-full flex-1 min-h-0">
+          <MapLibreMap
+            latitude={28.472502}
+            longitude={77.489136}
+            zoom={14}
+            targetFlyLocation={targetFlyLocation}
             projectsWithBuildings={projectsWithBuildings}
             selectedBuilding={selectedBuilding}
             onSelectBuilding={setSelectedBuilding}
-            layerOptions={layerOptions}
-            targetFlyLocation={targetFlyLocation}
-            onViewerReady={setViewerInstance}
           />
         </div>
       </main>
