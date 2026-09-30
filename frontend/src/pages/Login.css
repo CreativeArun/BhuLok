@@ -1,0 +1,2192 @@
+/* =========================================================
+   BHULOK — 3D DIGITAL CADASTRE LOGIN
+   ========================================================= */
+
+.bhulok-login-page {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(41, 111, 245, 0.16),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(0, 190, 135, 0.10),
+      transparent 26%
+    ),
+    #f3f7fd;
+
+  color: #10294c;
+
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+/* =========================================================
+   ARCHITECTURAL BACKGROUND
+   ========================================================= */
+
+.login-grid-background {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(55, 98, 155, 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(55, 98, 155, 0.045) 1px,
+      transparent 1px
+    );
+
+  background-size: 36px 36px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent 90%
+    );
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   MAIN SHELL
+   ========================================================= */
+
+.login-container {
+  position: relative;
+  z-index: 2;
+
+  width: min(
+    1540px,
+    calc(100% - 44px)
+  );
+
+  height: calc(100vh - 44px);
+
+  min-height: 760px;
+
+  margin: 22px auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.05fr)
+    minmax(470px, 0.95fr);
+
+  overflow: hidden;
+
+  border-radius: 30px;
+
+  background:
+    rgba(255,255,255,.95);
+
+  border:
+    1px solid
+    rgba(211,224,241,.9);
+
+  box-shadow:
+    0 40px 100px
+      rgba(33,65,108,.15),
+
+    0 8px 30px
+      rgba(33,65,108,.06);
+}
+
+/* =========================================================
+   LEFT — SPATIAL WORLD
+   ========================================================= */
+
+.login-hero {
+  position: relative;
+
+  overflow: hidden;
+
+  padding:
+    34px 46px;
+
+  background:
+    radial-gradient(
+      circle at 72% 20%,
+      rgba(72, 132, 255, .22),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #f8fbff 0%,
+      #edf5ff 55%,
+      #f7fbff 100%
+    );
+}
+
+/* Large blue glow */
+
+.login-hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 650px;
+  height: 650px;
+
+  right: -260px;
+  top: -260px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(70,128,245,.16),
+      transparent 68%
+    );
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.login-brand {
+  position: relative;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.bhulok-logo {
+  position: relative;
+
+  width: 45px;
+  height: 45px;
+}
+
+.logo-blue,
+.logo-green {
+  position: absolute;
+
+  width: 27px;
+  height: 27px;
+
+  border-radius: 7px;
+
+  transform:
+    rotate(30deg);
+
+  box-shadow:
+    0 7px 15px
+      rgba(20,91,216,.18);
+}
+
+.logo-blue {
+  left: 11px;
+  top: 2px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #2493ff,
+      #1355d7
+    );
+}
+
+.logo-green {
+  left: 2px;
+  top: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #08d69b,
+      #008c62
+    );
+}
+
+.brand-title {
+  color: #10284b;
+
+  font-size: 27px;
+
+  line-height: 1;
+
+  font-weight: 850;
+
+  letter-spacing: -1.3px;
+}
+
+.brand-subtitle {
+  margin-top: 4px;
+
+  color: #72839a;
+
+  font-size: 10px;
+}
+
+/* =========================================================
+   HERO TEXT
+   ========================================================= */
+
+.hero-content {
+  position: relative;
+  z-index: 5;
+
+  margin-top: 52px;
+
+  max-width: 720px;
+}
+
+.hero-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding:
+    8px 13px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(239,246,255,.9);
+
+  border:
+    1px solid #d5e5ff;
+
+  color: #1265df;
+
+  font-size: 9px;
+
+  font-weight: 850;
+
+  letter-spacing: .06em;
+}
+
+.hero-badge span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #2478ee;
+
+  box-shadow:
+    0 0 0 4px
+    rgba(36,120,238,.09);
+}
+
+.hero-badge b {
+  color: #9baabd;
+}
+
+.hero-content h1 {
+  margin:
+    24px 0 16px;
+
+  max-width: 680px;
+
+  font-size:
+    clamp(48px, 5vw, 76px);
+
+  line-height:
+    .93;
+
+  letter-spacing:
+    -4.5px;
+
+  font-weight:
+    760;
+
+  color:
+    #10294e;
+}
+
+.hero-content h1 span {
+  display: block;
+
+  color:
+    #1268eb;
+
+  background:
+    linear-gradient(
+      100deg,
+      #1268eb,
+      #2882ff
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color:
+    transparent;
+}
+
+.hero-description {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: #63758f;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+/* =========================================================
+   FEATURE TILES
+   ========================================================= */
+
+.hero-features {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 10px;
+
+  margin-top: 24px;
+
+  max-width: 610px;
+}
+
+.hero-feature {
+  min-height: 65px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding:
+    10px 12px;
+
+  border-radius: 14px;
+
+  background:
+    rgba(255,255,255,.76);
+
+  border:
+    1px solid
+    rgba(208,222,239,.95);
+
+  box-shadow:
+    0 10px 24px
+      rgba(41,72,113,.055);
+
+  backdrop-filter:
+    blur(12px);
+}
+
+.feature-icon {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #edf5ff,
+      #dceaff
+    );
+
+  color: #1768e8;
+
+  font-size: 15px;
+}
+
+.hero-feature strong,
+.hero-feature span {
+  display: block;
+}
+
+.hero-feature strong {
+  color: #243d5e;
+
+  font-size: 9px;
+
+  font-weight: 850;
+}
+
+.hero-feature span {
+  margin-top: 3px;
+
+  color: #8492a6;
+
+  font-size: 7px;
+}
+
+/* =========================================================
+   3D PROPERTY SCENE
+   ========================================================= */
+
+.property-visual {
+  position: absolute;
+
+  left: 25px;
+  right: 25px;
+
+  bottom: 70px;
+
+  height: 350px;
+
+  perspective:
+    1100px;
+
+  transform-style:
+    preserve-3d;
+}
+
+.visual-glow {
+  position: absolute;
+
+  left: 50%;
+  top: 58%;
+
+  width: 600px;
+  height: 280px;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(38,108,240,.24),
+      rgba(38,108,240,.05) 48%,
+      transparent 72%
+    );
+
+  filter:
+    blur(20px);
+}
+
+/* =========================================================
+   3D CADASTRAL GROUND
+   ========================================================= */
+
+.parcel-ground {
+  position: absolute;
+
+  left: 50%;
+  top: 55%;
+
+  width: 690px;
+  height: 310px;
+
+  transform:
+    translate(-50%, -50%)
+    perspective(1000px)
+    rotateX(58deg)
+    rotateZ(-8deg);
+
+  border-radius: 18px;
+
+  border:
+    1px solid
+    rgba(95,135,187,.55);
+
+  background:
+    linear-gradient(
+      rgba(59,116,194,.10) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(59,116,194,.10) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      135deg,
+      #eef5ff,
+      #dfeafa
+    );
+
+  background-size:
+    26px 26px,
+    26px 26px,
+    auto;
+
+  box-shadow:
+    0 45px 65px
+      rgba(28,63,109,.20),
+
+    inset 0 1px 0
+      rgba(255,255,255,.9);
+}
+
+/* =========================================================
+   ROADS
+   ========================================================= */
+
+.road {
+  position: absolute;
+
+  background:
+    linear-gradient(
+      90deg,
+      #c6d5e7,
+      #e4ebf4
+    );
+
+  border:
+    1px solid #b4c5da;
+}
+
+.road::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  top: 50%;
+
+  border-top:
+    1px dashed
+    rgba(75,109,151,.35);
+}
+
+.road-a {
+  width: 130%;
+  height: 36px;
+
+  left: -15%;
+  top: 53%;
+}
+
+.road-b {
+  width: 36px;
+  height: 130%;
+
+  left: 65%;
+  top: -15%;
+}
+
+/* =========================================================
+   PARCELS
+   ========================================================= */
+
+.parcel-line {
+  position: absolute;
+
+  border:
+    2px dashed;
+
+  border-radius: 3px;
+}
+
+.parcel-a {
+  width: 170px;
+  height: 100px;
+
+  left: 45px;
+  top: 38px;
+
+  border-color:
+    rgba(33,106,236,.72);
+}
+
+.parcel-b {
+  width: 145px;
+  height: 92px;
+
+  right: 43px;
+  top: 35px;
+
+  border-color:
+    rgba(7,178,126,.68);
+}
+
+.parcel-c {
+  width: 195px;
+  height: 100px;
+
+  left: 34px;
+  bottom: 30px;
+
+  border-color:
+    rgba(33,106,236,.55);
+}
+
+/* =========================================================
+   3D BUILDING
+   ========================================================= */
+
+.building {
+  position: absolute;
+
+  left: 49%;
+  bottom: 48px;
+
+  width: 190px;
+  height: 220px;
+
+  transform:
+    translateX(-50%);
+
+  transform-style:
+    preserve-3d;
+
+  filter:
+    drop-shadow(
+      18px 20px 14px
+      rgba(35,67,108,.18)
+    );
+}
+
+.building::after {
+  content: "";
+
+  position: absolute;
+
+  z-index: -1;
+
+  right: -24px;
+  bottom: 0;
+
+  width: 25px;
+  height: 190px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #9bb5d6,
+      #6788b3
+    );
+
+  transform:
+    skewY(-26deg);
+
+  transform-origin:
+    bottom left;
+}
+
+.building-floor {
+  position: absolute;
+
+  left: 0;
+
+  width: 190px;
+  height: 43px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content:
+    space-evenly;
+
+  padding:
+    0 15px;
+
+  border:
+    1px solid
+    rgba(83,132,198,.9);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(234,244,255,.97),
+      rgba(192,220,251,.94)
+    );
+
+  box-shadow:
+    inset 0 1px 0
+      rgba(255,255,255,.95),
+
+    7px 7px 0
+      rgba(45,75,118,.08);
+}
+
+.building-floor span {
+  width: 23px;
+  height: 27px;
+
+  border-radius: 3px;
+
+  border:
+    1px solid #6495d6;
+
+  background:
+    linear-gradient(
+      145deg,
+      #6daeff,
+      #e1f3ff
+    );
+}
+
+.floor-one {
+  bottom: 0;
+}
+
+.floor-two {
+  bottom: 39px;
+}
+
+.floor-three {
+  bottom: 78px;
+}
+
+.floor-four {
+  bottom: 117px;
+}
+
+.building-roof {
+  position: absolute;
+
+  z-index: 5;
+
+  left: -9px;
+  top: -28px;
+
+  width: 208px;
+  height: 31px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #e8f2fd,
+      #c7dcf5
+    );
+
+  border:
+    1px solid #6d92c5;
+
+  transform:
+    skewX(-17deg);
+}
+
+.roof-unit {
+  width: 43px;
+  height: 16px;
+
+  margin:
+    -14px auto 0;
+
+  border-radius:
+    6px 6px 0 0;
+
+  background:
+    linear-gradient(
+      145deg,
+      #2786ff,
+      #1559d8
+    );
+}
+
+/* =========================================================
+   FLOATING 3D INFORMATION CARDS
+   ========================================================= */
+
+.floating-card {
+  position: absolute;
+
+  z-index: 15;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding:
+    10px 13px;
+
+  border-radius:
+    13px;
+
+  background:
+    rgba(255,255,255,.97);
+
+  border:
+    1px solid #d7e3f1;
+
+  box-shadow:
+    0 16px 35px
+      rgba(32,67,111,.16);
+
+  backdrop-filter:
+    blur(15px);
+}
+
+.floating-card strong,
+.floating-card span {
+  display: block;
+}
+
+.floating-card strong {
+  color: #1d3556;
+
+  font-size: 9px;
+
+  font-weight: 850;
+}
+
+.floating-card span {
+  color: #77879d;
+
+  font-size: 7px;
+
+  margin-top: 3px;
+}
+
+.floating-icon {
+  width: 31px;
+  height: 31px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 9px;
+
+  background:
+    #e8f1ff;
+
+  color: #1768e8;
+}
+
+.floating-icon.green {
+  background:
+    #e3f8f1;
+
+  color: #069b70;
+}
+
+.building-card {
+  left: 41%;
+  top: 2%;
+
+  transform:
+    rotateZ(3deg);
+}
+
+.parcel-card {
+  left: 1%;
+  bottom: 23px;
+
+  transform:
+    rotateZ(-3deg);
+}
+
+.ulpin-card {
+  right: 1%;
+  bottom: 45px;
+
+  transform:
+    rotateZ(3deg);
+}
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.hero-stats {
+  position: absolute;
+
+  left: 46px;
+  right: 46px;
+
+  bottom: 27px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  border-top:
+    1px solid #d5e0ee;
+
+  border-bottom:
+    1px solid #d5e0ee;
+}
+
+.hero-stats div {
+  padding:
+    10px 13px;
+}
+
+.hero-stats div + div {
+  border-left:
+    1px solid #d5e0ee;
+}
+
+.hero-stats strong {
+  display: block;
+
+  color: #1768e7;
+
+  font-size: 17px;
+
+  font-weight: 850;
+}
+
+.hero-stats span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #8190a5;
+
+  font-size: 7px;
+}
+
+/* =========================================================
+   RIGHT SIDE — LOGIN / ACCESS MATRIX
+   ========================================================= */
+
+.login-panel {
+  position: relative;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: center;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #f8fbff
+    );
+
+  border-left:
+    1px solid #e1e9f3;
+}
+
+/*
+   3D geometric object behind the login panel.
+*/
+
+.login-panel::before {
+  content: "";
+
+  position: absolute;
+
+  width: 360px;
+  height: 360px;
+
+  right: -145px;
+  top: -120px;
+
+  border:
+    1px solid
+    rgba(35,107,232,.11);
+
+  transform:
+    rotate(30deg)
+    skewY(-8deg);
+
+  box-shadow:
+    inset 0 0 0 35px
+      rgba(35,107,232,.018),
+
+    inset 0 0 0 70px
+      rgba(35,107,232,.018);
+
+  pointer-events: none;
+}
+
+.login-panel::after {
+  content: "";
+
+  position: absolute;
+
+  width: 250px;
+  height: 250px;
+
+  right: -80px;
+  bottom: -90px;
+
+  border:
+    1px solid
+    rgba(0,171,121,.10);
+
+  transform:
+    rotate(45deg)
+    perspective(500px)
+    rotateX(35deg);
+
+  pointer-events: none;
+}
+
+.login-panel-inner {
+  position: relative;
+
+  z-index: 5;
+
+  width:
+    min(520px, calc(100% - 78px));
+
+  margin:
+    auto;
+
+  padding:
+    38px 0;
+}
+
+/* =========================================================
+   ACCESS HEADER
+   ========================================================= */
+
+.secure-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding:
+    7px 11px;
+
+  border-radius:
+    999px;
+
+  background:
+    #eef5ff;
+
+  border:
+    1px solid #d9e7ff;
+
+  color:
+    #1664db;
+
+  font-size: 8px;
+
+  font-weight: 850;
+
+  letter-spacing:
+    .08em;
+}
+
+.login-heading h2 {
+  margin:
+    16px 0 8px;
+
+  font-size:
+    clamp(31px, 3vw, 42px);
+
+  line-height:
+    1;
+
+  letter-spacing:
+    -2.3px;
+
+  color:
+    #10294c;
+
+  font-weight:
+    800;
+}
+
+.login-heading h2 span {
+  color:
+    #1268e9;
+}
+
+.login-heading p {
+  max-width:
+    480px;
+
+  margin: 0;
+
+  color:
+    #718199;
+
+  font-size:
+    11px;
+
+  line-height:
+    1.65;
+}
+
+/* =========================================================
+   ROLE MATRIX
+   ========================================================= */
+
+.role-heading {
+  margin:
+    24px 0 10px;
+}
+
+.role-heading strong {
+  display: block;
+
+  color:
+    #1e3553;
+
+  font-size:
+    11px;
+
+  font-weight:
+    850;
+}
+
+.role-heading span {
+  display: block;
+
+  margin-top:
+    3px;
+
+  color:
+    #8795a9;
+
+  font-size:
+    8px;
+}
+
+.persona-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap:
+    9px;
+}
+
+/*
+   Make each persona feel like a physical tile.
+*/
+
+.persona {
+  position: relative;
+
+  min-height:
+    72px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    11px;
+
+  padding:
+    11px;
+
+  text-align:
+    left;
+
+  border:
+    1px solid
+    #dce5ef;
+
+  border-radius:
+    14px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #f5f8fc
+    );
+
+  box-shadow:
+    0 5px 0
+      rgba(210,222,237,.55),
+
+    0 10px 18px
+      rgba(38,72,116,.045);
+
+  cursor:
+    pointer;
+
+  transition:
+    .18s ease;
+}
+
+.persona:hover {
+  transform:
+    translateY(-2px);
+
+  border-color:
+    #91b5ef;
+
+  box-shadow:
+    0 7px 0
+      rgba(198,216,240,.7),
+
+    0 14px 25px
+      rgba(38,72,116,.08);
+}
+
+.persona-active {
+  transform:
+    translateY(-2px);
+
+  border:
+    1.5px solid
+    #1d6ff0;
+
+  background:
+    linear-gradient(
+      145deg,
+      #f1f6ff,
+      #e5efff
+    );
+
+  box-shadow:
+    0 7px 0
+      rgba(177,204,241,.8),
+
+    0 14px 28px
+      rgba(31,103,225,.13);
+}
+
+.persona-icon {
+  width:
+    36px;
+
+  height:
+    36px;
+
+  flex-shrink:
+    0;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  border-radius:
+    10px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #eef5ff,
+      #dceaff
+    );
+
+  color:
+    #1768e8;
+
+  font-size:
+    15px;
+
+  box-shadow:
+    inset 0 1px 0
+      rgba(255,255,255,.9);
+}
+
+.persona-text {
+  min-width:
+    0;
+}
+
+.persona-text strong {
+  display:
+    block;
+
+  color:
+    #213a5b;
+
+  font-size:
+    9px;
+
+  font-weight:
+    850;
+}
+
+.persona-text span {
+  display:
+    block;
+
+  margin-top:
+    4px;
+
+  color:
+    #8290a4;
+
+  font-size:
+    7px;
+}
+
+.persona-radio {
+  position:
+    absolute;
+
+  right:
+    9px;
+
+  top:
+    9px;
+
+  width:
+    15px;
+
+  height:
+    15px;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  border:
+    1px solid
+    #bac7d8;
+
+  border-radius:
+    50%;
+
+  color:
+    white;
+
+  font-size:
+    8px;
+}
+
+.persona-active .persona-radio {
+  background:
+    #1768e8;
+
+  border-color:
+    #1768e8;
+
+  box-shadow:
+    0 0 0 3px
+      rgba(23,104,232,.08);
+}
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.login-form {
+  margin-top:
+    19px;
+}
+
+.login-form > label {
+  display:
+    block;
+
+  color:
+    #3b526f;
+
+  font-size:
+    9px;
+
+  font-weight:
+    800;
+
+  margin-bottom:
+    11px;
+}
+
+.login-input {
+  height:
+    46px;
+
+  margin-top:
+    6px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    #d8e2ed;
+
+  border-radius:
+    11px;
+
+  background:
+    rgba(255,255,255,.9);
+
+  transition:
+    .18s ease;
+}
+
+.login-input:focus-within {
+  border-color:
+    #2c76e8;
+
+  box-shadow:
+    0 0 0 4px
+      rgba(44,118,232,.08);
+}
+
+.login-input > span {
+  width:
+    39px;
+
+  text-align:
+    center;
+
+  color:
+    #7890ad;
+}
+
+.login-input input {
+  flex:
+    1;
+
+  height:
+    100%;
+
+  border:
+    0;
+
+  outline:
+    0;
+
+  background:
+    transparent;
+
+  color:
+    #18304f;
+
+  font-size:
+    11px;
+}
+
+.login-input input::placeholder {
+  color:
+    #a0adbd;
+}
+
+.show-password {
+  border:
+    0;
+
+  background:
+    transparent;
+
+  color:
+    #1767e5;
+
+  font-size:
+    8px;
+
+  font-weight:
+    800;
+
+  padding:
+    10px;
+
+  cursor:
+    pointer;
+}
+
+/* =========================================================
+   OPTIONS
+   ========================================================= */
+
+.login-options {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  margin:
+    1px 0 14px;
+}
+
+.remember {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    6px;
+
+  color:
+    #7d8ca1;
+
+  font-size:
+    8px;
+}
+
+.remember input {
+  width:
+    12px;
+
+  height:
+    12px;
+
+  accent-color:
+    #1768e8;
+}
+
+.reset-link {
+  border:
+    0;
+
+  background:
+    transparent;
+
+  color:
+    #1267e9;
+
+  font-size:
+    8px;
+
+  font-weight:
+    800;
+
+  cursor:
+    pointer;
+}
+
+/* =========================================================
+   SIGN IN
+   ========================================================= */
+
+.signin-button {
+  position:
+    relative;
+
+  width:
+    100%;
+
+  height:
+    51px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  padding:
+    0 18px;
+
+  border:
+    0;
+
+  border-radius:
+    12px;
+
+  background:
+    linear-gradient(
+      100deg,
+      #176ff4,
+      #0757d8
+    );
+
+  color:
+    white;
+
+  font-size:
+    11px;
+
+  font-weight:
+    850;
+
+  cursor:
+    pointer;
+
+  overflow:
+    hidden;
+
+  box-shadow:
+    0 13px 28px
+      rgba(20,99,226,.25);
+}
+
+.signin-button::before {
+  content: "";
+
+  position:
+    absolute;
+
+  width:
+    120px;
+
+  height:
+    120px;
+
+  right:
+    45px;
+
+  top:
+    -65px;
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(255,255,255,.12);
+}
+
+.signin-button:hover {
+  box-shadow:
+    0 17px 35px
+      rgba(20,99,226,.31);
+}
+
+.signin-button strong {
+  font-size:
+    19px;
+
+  font-weight:
+    400;
+}
+
+/* =========================================================
+   AUTHORIZATION CARD
+   ========================================================= */
+
+.authorization-note {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    10px;
+
+  margin-top:
+    12px;
+
+  padding:
+    11px 12px;
+
+  border-radius:
+    11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f1f7ff,
+      #f7faff
+    );
+
+  border:
+    1px solid
+    #dfe9f7;
+}
+
+.authorization-icon {
+  width:
+    27px;
+
+  height:
+    27px;
+
+  flex-shrink:
+    0;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  border-radius:
+    8px;
+
+  background:
+    #e3efff;
+
+  color:
+    #1768e7;
+
+  font-size:
+    11px;
+}
+
+.authorization-note strong {
+  display:
+    block;
+
+  color:
+    #385473;
+
+  font-size:
+    8px;
+}
+
+.authorization-note span {
+  display:
+    block;
+
+  margin-top:
+    3px;
+
+  color:
+    #8794a7;
+
+  font-size:
+    7px;
+
+  line-height:
+    1.4;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.login-footer {
+  position:
+    absolute;
+
+  bottom:
+    18px;
+
+  left:
+    0;
+
+  right:
+    0;
+
+  display:
+    flex;
+
+  justify-content:
+    center;
+
+  gap:
+    14px;
+
+  color:
+    #9aa7b8;
+
+  font-size:
+    7px;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .login-container {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .login-hero {
+    padding:
+      30px;
+  }
+
+  .hero-content h1 {
+    font-size:
+      55px;
+  }
+
+  .property-visual {
+    transform:
+      scale(.88);
+
+    transform-origin:
+      center bottom;
+  }
+
+  .login-panel-inner {
+    width:
+      calc(100% - 55px);
+  }
+}
+
+@media (max-width: 950px) {
+  .login-container {
+    width:
+      calc(100% - 20px);
+
+    height:
+      auto;
+
+    min-height:
+      calc(100vh - 20px);
+
+    margin:
+      10px;
+
+    grid-template-columns:
+      1fr;
+  }
+
+  .login-hero {
+    display:
+      none;
+  }
+
+  .login-panel {
+    min-height:
+      calc(100vh - 20px);
+
+    border:
+      0;
+  }
+
+  .login-panel-inner {
+    width:
+      min(520px, calc(100% - 50px));
+  }
+}
+
+@media (max-width: 600px) {
+  .login-panel-inner {
+    width:
+      calc(100% - 30px);
+
+    padding:
+      30px 0;
+  }
+
+  .persona-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .login-heading h2 {
+    font-size:
+      30px;
+  }
+
+  .login-footer {
+    position:
+      static;
+
+    margin-top:
+      20px;
+
+    padding-bottom:
+      15px;
+
+    flex-wrap:
+      wrap;
+  }
+}
+
+/* =========================================================
+   TYPOGRAPHY POLISH — BHULOK LOGIN
+   ========================================================= */
+
+/* Brand */
+.brand-title {
+  font-size: 30px;
+}
+
+.brand-subtitle {
+  font-size: 12px;
+}
+
+/* Badge */
+.hero-badge {
+  font-size: 10px;
+  padding: 9px 14px;
+}
+
+.secure-badge {
+  font-size: 9px;
+  padding: 8px 12px;
+}
+
+/* Hero */
+.hero-content h1 {
+  font-size: clamp(52px, 5vw, 78px);
+  letter-spacing: -4px;
+}
+
+.hero-description {
+  font-size: 15px;
+  line-height: 1.65;
+  max-width: 690px;
+}
+
+/* Left feature tiles */
+.hero-feature {
+  min-height: 70px;
+  padding: 12px 14px;
+}
+
+.hero-feature strong {
+  font-size: 11px;
+}
+
+.hero-feature span {
+  font-size: 9px;
+  margin-top: 4px;
+}
+
+.feature-icon {
+  width: 38px;
+  height: 38px;
+  font-size: 17px;
+}
+
+/* Floating 3D cards */
+.floating-card {
+  padding: 12px 15px;
+}
+
+.floating-card strong {
+  font-size: 10px;
+}
+
+.floating-card span {
+  font-size: 9px;
+}
+
+.floating-icon {
+  width: 34px;
+  height: 34px;
+  font-size: 16px;
+}
+
+/* Statistics */
+.hero-stats strong {
+  font-size: 20px;
+}
+
+.hero-stats span {
+  font-size: 9px;
+}
+
+/* =========================================================
+   RIGHT LOGIN PANEL
+   ========================================================= */
+
+.login-panel-inner {
+  width: min(560px, calc(100% - 72px));
+}
+
+/* Main heading */
+.login-heading h2 {
+  font-size: clamp(36px, 3vw, 46px);
+  line-height: 1.05;
+  letter-spacing: -2px;
+}
+
+.login-heading p {
+  font-size: 13px;
+  line-height: 1.65;
+  max-width: 510px;
+}
+
+/* Role section */
+.role-heading {
+  margin-top: 28px;
+  margin-bottom: 12px;
+}
+
+.role-heading strong {
+  font-size: 13px;
+}
+
+.role-heading span {
+  font-size: 10px;
+  margin-top: 4px;
+}
+
+/* =========================================================
+   PERSONA TILES
+   ========================================================= */
+
+.persona {
+  min-height: 78px;
+  padding: 12px 13px;
+  border-radius: 15px;
+}
+
+.persona-icon {
+  width: 40px;
+  height: 40px;
+  font-size: 17px;
+}
+
+.persona-text strong {
+  font-size: 11px;
+}
+
+.persona-text span {
+  font-size: 9px;
+  margin-top: 4px;
+}
+
+.persona-radio {
+  width: 17px;
+  height: 17px;
+  font-size: 9px;
+}
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.login-form {
+  margin-top: 23px;
+}
+
+.login-form > label {
+  font-size: 11px;
+  margin-bottom: 14px;
+}
+
+.login-input {
+  height: 52px;
+  border-radius: 12px;
+}
+
+.login-input > span {
+  width: 44px;
+  font-size: 16px;
+}
+
+.login-input input {
+  font-size: 14px;
+}
+
+.login-input input::placeholder {
+  font-size: 13px;
+}
+
+.show-password {
+  font-size: 10px;
+  padding: 12px;
+}
+
+/* =========================================================
+   LOGIN OPTIONS
+   ========================================================= */
+
+.login-options {
+  margin-bottom: 17px;
+}
+
+.remember {
+  font-size: 10px;
+  gap: 7px;
+}
+
+.remember input {
+  width: 14px;
+  height: 14px;
+}
+
+.reset-link {
+  font-size: 10px;
+}
+
+/* =========================================================
+   SIGN IN BUTTON
+   ========================================================= */
+
+.signin-button {
+  height: 56px;
+  border-radius: 13px;
+  padding: 0 20px;
+  font-size: 14px;
+}
+
+.signin-button strong {
+  font-size: 21px;
+}
+
+/* =========================================================
+   AUTHORIZATION CARD
+   ========================================================= */
+
+.authorization-note {
+  padding: 13px 14px;
+  gap: 11px;
+}
+
+.authorization-icon {
+  width: 31px;
+  height: 31px;
+  font-size: 13px;
+}
+
+.authorization-note strong {
+  font-size: 10px;
+}
+
+.authorization-note span {
+  font-size: 9px;
+  line-height: 1.45;
+}
+
+/* Footer */
+.login-footer {
+  font-size: 9px;
+}
+
+/* =========================================================
+   BETTER LARGE-SCREEN BALANCE
+   ========================================================= */
+
+@media (min-width: 1400px) {
+  .login-panel-inner {
+    width: min(580px, calc(100% - 90px));
+  }
+
+  .login-heading h2 {
+    font-size: 44px;
+  }
+
+  .persona {
+    min-height: 82px;
+  }
+
+  .persona-text strong {
+    font-size: 12px;
+  }
+
+  .persona-text span {
+    font-size: 9px;
+  }
+
+  .login-input {
+    height: 54px;
+  }
+}
