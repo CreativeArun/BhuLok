@@ -19,14 +19,14 @@ const PropertyVerification: React.FC = () => {
           <span className="material-symbols-outlined text-tertiary text-[20px] mt-0.5">check_circle</span>
           <div className="flex flex-col">
             <span className="font-title-sm text-body-md font-semibold text-on-surface">Geometry valid &amp; closed volume</span>
-            <span className="font-label-sm text-label-sm text-on-surface-variant">Watertight 3D polyhedron with zero manifold self-intersections.</span>
+            <span className="font-label-sm text-label-sm text-on-surface-variant">3D polyhedron topology validation.</span>
           </div>
         </div>
         <div className="flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-low">
           <span className="material-symbols-outlined text-tertiary text-[20px] mt-0.5">check_circle</span>
           <div className="flex flex-col">
             <span className="font-title-sm text-body-md font-semibold text-on-surface">Property completely inside building</span>
-            <span className="font-label-sm text-label-sm text-on-surface-variant">100% spatial containment inside the parent cadastral building footprint.</span>
+            <span className="font-label-sm text-label-sm text-on-surface-variant">Spatial containment validation against the parent building footprint.</span>
           </div>
         </div>
         <div className="flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-low">

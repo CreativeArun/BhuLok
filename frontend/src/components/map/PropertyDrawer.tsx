@@ -297,7 +297,7 @@ export const PropertyDrawer: React.FC<PropertyDrawerProps> = ({
               <div className="space-y-1 text-label-sm text-on-surface">
                 <div className="flex justify-between py-1 border-b border-surface-container-high/40">
                   <span className="text-on-surface-variant">Registry Standard:</span>
-                  <span className="font-semibold">ISO 19152 LADM 3D</span>
+                  <span className="font-semibold">3D Cadastral Framework</span>
                 </div>
                 <div className="flex justify-between py-1 border-b border-surface-container-high/40">
                   <span className="text-on-surface-variant">Subdivision Type:</span>
@@ -305,7 +305,7 @@ export const PropertyDrawer: React.FC<PropertyDrawerProps> = ({
                 </div>
                 <div className="flex justify-between py-1 border-b border-surface-container-high/40">
                   <span className="text-on-surface-variant">Geometry Validation:</span>
-                  <span className="text-emerald-600 font-bold">100% Watertight Closed Mesh</span>
+                  <span className="text-emerald-600 font-bold">Closed 3D Mesh</span>
                 </div>
                 <div className="flex justify-between py-1">
                   <span className="text-on-surface-variant">Elevation Datum:</span>

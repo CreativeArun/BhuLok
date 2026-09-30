@@ -39,7 +39,7 @@ const Home: React.FC = () => {
                   </h1>
                   {/* Descriptive Subtitle */}
                   <p className="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
-                    Upload your property information and generate an interactive 3D spatial map with an official Unique Land Parcel Identification Number (ULPIN). No GIS degree required.
+                    Upload your property information and generate an interactive 3D spatial map with a structured ULPIN-ready property identity.
                   </p>
                   {/* Primary & Secondary Actions */}
                   <div className="flex flex-wrap items-center gap-space-md pt-space-xs w-full sm:w-auto">
@@ -66,12 +66,12 @@ const Home: React.FC = () => {
                       <span className="font-label-sm text-label-sm text-on-surface-variant">Setup time</span>
                     </div>
                     <div className="flex flex-col">
-                      <span className="font-headline-lg text-headline-lg text-on-surface font-bold">100%</span>
-                      <span className="font-label-sm text-label-sm text-on-surface-variant">ISO Cadastral 19152</span>
+                      <span className="font-headline-lg text-headline-lg text-on-surface font-bold">3D</span>
+                      <span className="font-label-sm text-label-sm text-on-surface-variant">Cadastral Framework</span>
                     </div>
                     <div className="flex flex-col">
-                      <span className="font-headline-lg text-headline-lg text-on-surface font-bold">Sub-Centimeter</span>
-                      <span className="font-label-sm text-label-sm text-on-surface-variant">Volume accuracy</span>
+                      <span className="font-headline-lg text-headline-lg text-on-surface font-bold">Spatial</span>
+                      <span className="font-label-sm text-label-sm text-on-surface-variant">Representation</span>
                     </div>
                   </div>
                 </div>
@@ -87,7 +87,7 @@ const Home: React.FC = () => {
                         <span className="font-label-md text-label-md text-on-surface font-semibold">Live 3D Cadastre Mesh</span>
                       </div>
                       <span className="px-space-xs py-0.5 rounded-full bg-tertiary-container/10 text-tertiary font-code-sm text-code-sm font-semibold">
-                        REGISTERED MESH
+                        3D PROPERTY MESH
                       </span>
                     </div>
                     {/* Isometric Scene Illustration Canvas */}
@@ -124,7 +124,7 @@ const Home: React.FC = () => {
                         </div>
                         <div className="flex flex-col text-left">
                           <span className="font-label-sm text-label-sm text-on-surface font-bold leading-tight">3D ID: IN-UP-P00194</span>
-                          <span className="font-code-sm text-[10px] text-tertiary font-semibold leading-none">ULPIN Certified • Tier A</span>
+                          <span className="font-code-sm text-[10px] text-tertiary font-semibold leading-none">3D ULPIN • Prototype</span>
                         </div>
                       </div>
                       {/* Spatial Coordinate Compass Overlay */}
@@ -219,7 +219,7 @@ const Home: React.FC = () => {
                       <div className="flex flex-col gap-space-xs">
                         <h3 className="font-title-sm text-title-sm text-on-surface font-bold">3. Identify &amp; Tag</h3>
                         <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                          Assign unique floor layers, units, and register an official 14-character 3D ULPIN registry key.
+                          Assign unique floor layers, units, and a structured 3D ULPIN identifier.
                         </p>
                       </div>
                     </div>
@@ -281,7 +281,7 @@ const Home: React.FC = () => {
                       <div className="p-1 rounded-full bg-primary text-on-primary mt-0.5">
                         <span className="material-symbols-outlined text-[14px]">check</span>
                       </div>
-                      <span className="font-body-md text-body-md text-on-surface">One-click export to land administration databases and municipality registries.</span>
+                      <span className="font-body-md text-body-md text-on-surface">Prepare structured property data for land-administration workflows.</span>
                     </div>
                   </div>
                 </div>
@@ -319,13 +319,13 @@ const Home: React.FC = () => {
                   <div className="flex flex-col gap-space-xs text-center md:text-left">
                     <div className="inline-flex items-center gap-space-xs px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm self-center md:self-start">
                       <span className="material-symbols-outlined text-[16px] text-tertiary-fixed">verified</span>
-                      <span className="font-label-sm text-label-sm font-semibold tracking-wide uppercase text-white">Official Cadastral Platform</span>
+                      <span className="font-label-sm text-label-sm font-semibold tracking-wide uppercase text-white">3D Cadastral Platform</span>
                     </div>
                     <h3 className="font-headline-lg text-headline-lg font-bold text-white tracking-tight">
-                      Certified 3D Digital Cadastre • Instant Spatial Verification
+                      3D Digital Cadastre • Spatial Verification
                     </h3>
                     <p className="font-body-md text-body-md text-on-primary-container max-w-2xl">
-                      Fully integrated with standard land administration systems. Experience complete 3D parcel registration in real-time.
+                      A prototype workflow for 3D parcel representation, vertical property mapping, and spatial analysis.
                     </p>
                   </div>
                   <Link

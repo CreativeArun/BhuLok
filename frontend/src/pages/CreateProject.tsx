@@ -146,7 +146,7 @@ const CreateProject: React.FC = () => {
                     <div className="p-3.5 rounded-xl bg-surface-container flex items-center gap-3">
                       <span className="material-symbols-outlined text-primary text-[22px]">tag</span>
                       <div className="flex flex-col">
-                        <span className="font-label-sm text-label-sm text-on-surface-variant font-medium">Assigned Official 3D ULPIN ID</span>
+                        <span className="font-label-sm text-label-sm text-on-surface-variant font-medium">Assigned 3D ULPIN ID</span>
                         <span className="font-code-sm text-code-sm font-semibold text-on-surface">ULPIN-DEL-7890-3D-P4</span>
                       </div>
                     </div>
@@ -159,7 +159,7 @@ const CreateProject: React.FC = () => {
                     </div>
                     <div className="flex flex-col gap-1">
                       <h3 className="font-title-sm text-title-sm text-on-surface font-semibold">Zero Surveying Gear Needed</h3>
-                      <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">Our smart vertical alignment engine derives official volumetric parcel coordinates automatically using ordinary smartphone captures.</p>
+                      <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">Our spatial processing pipeline derives volumetric parcel coordinates from the submitted property and spatial data.</p>
                     </div>
                   </div>
                 </div>

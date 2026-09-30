@@ -124,9 +124,9 @@ const PropertyReport: React.FC = () => {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-space-xs text-on-surface-variant">
                         <span className="material-symbols-outlined text-[20px] text-primary">badge</span>
-                        <span className="font-label-md text-label-md font-semibold text-on-surface">Official 3D Property Identity (3D ULPIN)</span>
+                        <span className="font-label-md text-label-md font-semibold text-on-surface">3D Property Identity (3D ULPIN)</span>
                       </div>
-                      <span className="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-medium">Survey Certified</span>
+                      <span className="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-medium">Spatially Processed</span>
                     </div>
 
                     {/* Code Display & Direct Actions */}
@@ -256,7 +256,7 @@ const PropertyReport: React.FC = () => {
                       <span className="font-label-md text-label-md text-on-surface-variant ml-1 font-medium">IDs</span>
                     </div>
                     <span className="font-label-sm text-label-sm text-tertiary mt-1 flex items-center gap-1 font-semibold">
-                      <span className="material-symbols-outlined text-[14px]">task_alt</span> 100% Registered
+                      <span className="material-symbols-outlined text-[14px]">task_alt</span> Processed
                     </span>
                   </div>
                 </div>
