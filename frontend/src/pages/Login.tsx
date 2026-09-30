@@ -177,115 +177,46 @@ function Login() {
           </div>
 
           {/* =================================================
-              3D PROPERTY VISUAL
+              PHOTOREALISTIC 3D PROPERTY VISUAL
           ================================================== */}
 
           <div className="property-visual">
 
-            <div className="visual-glow" />
+            <img
+              src="/bhulok-3d-scene.jpg"
+              alt="BhuLok 3D cadastral property visualization"
+              className="property-scene-image"
+            />
 
-            <div className="city-layer city-back">
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
+            <div className="property-scene-overlay" />
+
+            <div className="scene-card scene-building-card">
+              <div className="floating-icon">▣</div>
+              <div>
+                <strong>3D Building Model</strong>
+                <span>Floors · Units · Volume</span>
+              </div>
             </div>
 
-            <div className="parcel-ground">
-
-              <div className="road road-a" />
-              <div className="road road-b" />
-
-              <div className="parcel-line parcel-a" />
-              <div className="parcel-line parcel-b" />
-              <div className="parcel-line parcel-c" />
-
-              <div className="building">
-
-                <div className="building-roof">
-                  <div className="roof-unit" />
-                </div>
-
-                <div className="building-floor floor-four">
-                  <span /><span /><span /><span />
-                </div>
-
-                <div className="building-floor floor-three">
-                  <span /><span /><span /><span />
-                </div>
-
-                <div className="building-floor floor-two">
-                  <span /><span /><span /><span />
-                </div>
-
-                <div className="building-floor floor-one">
-                  <span /><span /><span /><span />
-                </div>
-
+            <div className="scene-card scene-parcel-card">
+              <div className="floating-icon green">⌖</div>
+              <div>
+                <strong>Parcel Boundary</strong>
+                <span>Validated spatial boundary</span>
               </div>
+            </div>
 
-              {/* 3D Building label */}
-
-              <div className="floating-card building-card">
-                <div className="floating-icon">▣</div>
-
-                <div>
-                  <strong>3D Building Model</strong>
-                  <span>Floors · Units · Volume</span>
-                </div>
+            <div className="scene-card scene-ulpin-card">
+              <div className="floating-icon">◇</div>
+              <div>
+                <strong>ULPIN-3D-001</strong>
+                <span>Property Identity</span>
               </div>
-
-              {/* Parcel label */}
-
-              <div className="floating-card parcel-card">
-                <div className="floating-icon green">⌖</div>
-
-                <div>
-                  <strong>Parcel Boundary</strong>
-                  <span>Structured spatial boundary</span>
-                </div>
-              </div>
-
-              {/* ULPIN label */}
-
-              <div className="floating-card ulpin-card">
-                <div className="floating-icon">◇</div>
-
-                <div>
-                  <strong>ULPIN-3D-001</strong>
-                  <span>Property Identity</span>
-                </div>
-              </div>
-
             </div>
 
           </div>
 
-          <div className="hero-stats">
-
-            <div>
-              <strong>3D</strong>
-              <span>Spatial Mapping</span>
-            </div>
-
-            <div>
-              <strong>24</strong>
-              <span>Spatial Units</span>
-            </div>
-
-            <div>
-              <strong>01</strong>
-              <span>Unified Registry</span>
-            </div>
-
-            <div>
-              <strong>AI</strong>
-              <span>Spatial Intelligence</span>
-            </div>
-
-          </div>
+          
 
         </section>
 
@@ -328,11 +259,10 @@ function Login() {
                 <button
                   key={persona.id}
                   type="button"
-                  className={`persona ${
-                    selectedPersona.id === persona.id
-                      ? 'persona-active'
-                      : ''
-                  }`}
+                  className={`persona ${selectedPersona.id === persona.id
+                    ? 'persona-active'
+                    : ''
+                    }`}
                   onClick={() => selectPersona(persona)}
                 >
 
